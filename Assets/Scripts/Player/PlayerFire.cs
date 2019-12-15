@@ -7,9 +7,13 @@ public class PlayerFire : MonoBehaviour
     public Weapon weapon = null;
 
     private void Update() {
-        if(Input.GetMouseButton(0)){
+        if(Input.GetMouseButtonDown(0)){
             if(weapon != null){
-                weapon.Fire();
+                weapon.BeginFiring();
+            }
+        } else if(Input.GetMouseButtonUp(0)){
+            if(weapon != null){
+                weapon.StopFiring();
             }
         }
     }
