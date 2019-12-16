@@ -6,7 +6,8 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement Variables")]
     public float speed = 6f;
-    public float jumpForce = 10f;
+    public float jumpHeight = 3f;
+    public float gravity = -9.81f;
 
     [SerializeField]
     private Transform groundCheck = null;
@@ -17,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
 
     CharacterController controller = null;
     Rigidbody rb = null;
+    Vector3 velocity;
 
     bool isGrounded = false;
 
@@ -38,13 +40,21 @@ public class PlayerMovement : MonoBehaviour
         Vector3 move = transform.right * moveX + transform.forward * moveZ;
 
         if(Input.GetKeyDown(KeyCode.Space) && isGrounded){
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
 
         controller.Move(move * speed * Time.deltaTime);
+        controller.Move(velocity * Time.deltaTime);
     }
 
     private void FixedUpdate() {
+
+        if(isGrounded && velocity.y < 0f){
+            velocity.y = -2f;
+        }
+
+        velocity.y += gravity * Time.deltaTime;
+
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);        
     }
 }

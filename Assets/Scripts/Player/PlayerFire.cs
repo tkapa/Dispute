@@ -16,5 +16,9 @@ public class PlayerFire : MonoBehaviour
                 weapon.StopFiring();
             }
         }
+
+        if(Input.GetKeyDown(KeyCode.R)){
+            weapon.Reload();
+        }
     }
 }
