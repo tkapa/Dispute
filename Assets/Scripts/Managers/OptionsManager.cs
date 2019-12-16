@@ -20,9 +20,11 @@ public class OptionsManager : MonoBehaviour
 
     public void ChangeFOV(float newFOV){
         fov.value = newFOV;
+        FindObjectOfType<Camera>().fieldOfView = fov.value;
     }
 
     public void ChangeSound(float newSound){
         sound.value = newSound;
+        AudioListener.volume = sound.value;
     }
 }

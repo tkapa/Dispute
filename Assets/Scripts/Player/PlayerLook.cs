@@ -12,6 +12,7 @@ public class PlayerLook : MonoBehaviour
     float mouseY = 0f;
 
     public SOFloat mouseSensitivity = null;
+    public SOFloat fov = null;
     public SOBool invertY = null;
 
     private void Start() {
@@ -21,7 +22,7 @@ public class PlayerLook : MonoBehaviour
     private void Update() {
         mouseX = Input.GetAxis("Mouse X") * mouseSensitivity.value * baseSense* Time.deltaTime;
         mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity.value * baseSense* Time.deltaTime;
-
+        
         if(invertY.value){
             xRotation += mouseY;
         } else {

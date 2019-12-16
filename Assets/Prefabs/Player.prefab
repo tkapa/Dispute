@@ -167,7 +167,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -307,7 +307,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   body: {fileID: 1041788270172047640}
+  baseSense: 100
   mouseSensitivity: {fileID: 11400000, guid: 264b73fed979b9646b1b61bed15ecb42, type: 2}
+  fov: {fileID: 11400000, guid: 0ba240a527c530a4ea06429de9424f86, type: 2}
   invertY: {fileID: 11400000, guid: e15b9051d3a309c4cb24c01630c8dd4a, type: 2}
 --- !u!114 &1041788269728120219
 MonoBehaviour:
@@ -389,7 +391,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 6
   jumpHeight: 3
-  gravity: -9.81
+  gravity: -19.62
   groundCheck: {fileID: 1041788269431785085}
   groundMask:
     serializedVersion: 2
