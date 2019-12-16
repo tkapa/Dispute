@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerLook : MonoBehaviour
 {
     public Transform body;
+    public float baseSense = 100f;
 
     float xRotation = 0f;
     float mouseX = 0f;
@@ -18,8 +19,8 @@ public class PlayerLook : MonoBehaviour
     }
 
     private void Update() {
-        mouseX = Input.GetAxis("Mouse X") * mouseSensitivity.value * Time.deltaTime;
-        mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity.value * Time.deltaTime;
+        mouseX = Input.GetAxis("Mouse X") * mouseSensitivity.value * baseSense* Time.deltaTime;
+        mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity.value * baseSense* Time.deltaTime;
 
         if(invertY.value){
             xRotation += mouseY;
