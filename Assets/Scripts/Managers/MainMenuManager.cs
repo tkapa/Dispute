@@ -29,4 +29,12 @@ public class MainMenuManager : MonoBehaviour
     public void ReturnToMainMenu(){
         mainCamera.Priority = 11;
     }
+
+    public void Quit(){
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #else
+            Application.Quit();
+        #endif
+    }
 }
