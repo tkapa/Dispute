@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseManager : MonoBehaviour
 {
@@ -56,9 +57,9 @@ public class PauseManager : MonoBehaviour
     }
 
     public void ReturnToMenu(){
-        //TODO: Return the game to the menu scene (TO BE MADE)
-        //isPaused.value = false;
-        //Time.timeScale = 1f;
+        isPaused.value = false;
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void Quit(){

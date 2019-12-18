@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class OptionsManager : MonoBehaviour
 {
@@ -9,6 +10,19 @@ public class OptionsManager : MonoBehaviour
     public SOFloat sensitivity = null;
     public SOFloat fov = null;
     public SOFloat sound = null;
+
+    [Header("UI Elements")]
+    public Toggle invertYToggle = null;
+    public Slider sensitivitySlider = null;
+    public Slider fovSlider = null;
+    public Slider soundSlider = null;
+
+    private void Start() {
+        invertYToggle.isOn = invertY.value;
+        sensitivitySlider.value = sensitivity.value;
+        fovSlider.value = fov.value;
+        soundSlider.value = sound.value;
+    }
 
     public void ToggleInvertY(bool val){
         invertY.value = val;
