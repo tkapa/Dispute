@@ -17,6 +17,7 @@ public class Weapon : MonoBehaviour
     public LayerMask mask;   
     public ParticleSystem muzzleFlash = null;
 
+    public bool infiniteAmmo = false;
     private bool isFiring = false;
 
     private void Start() {
@@ -57,7 +58,9 @@ public class Weapon : MonoBehaviour
             }
 
             muzzleFlash.Play();
-            ammoCount--;
+            
+            if(!infiniteAmmo)
+                ammoCount--;
 
             yield return new WaitForSeconds(fireRate);
         }
