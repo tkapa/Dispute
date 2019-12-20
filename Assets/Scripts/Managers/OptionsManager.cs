@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class OptionsManager : MonoBehaviour
 {
@@ -17,10 +18,16 @@ public class OptionsManager : MonoBehaviour
     public Slider fovSlider = null;
     public Slider soundSlider = null;
 
+    [Space]
+    public string gameVolumeParameter = "gameAudioVolume";
+    public AudioMixer gameAudioMixer = null;
+
     private void Start() {
         invertYToggle.isOn = invertY.value;
         sensitivitySlider.value = sensitivity.value;
         fovSlider.value = fov.value;
+
+        gameAudioMixer.SetFloat("gameAudioVolume", -80 + sound.value);
         soundSlider.value = sound.value;
     }
 
@@ -39,6 +46,6 @@ public class OptionsManager : MonoBehaviour
 
     public void ChangeSound(float newSound){
         sound.value = newSound;
-        AudioListener.volume = sound.value;
+        gameAudioMixer.SetFloat("gameAudioVolume", -80 + sound.value);
     }
 }

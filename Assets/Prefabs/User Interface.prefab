@@ -4192,6 +4192,8 @@ MonoBehaviour:
   sensitivitySlider: {fileID: 3909433995366346270}
   fovSlider: {fileID: 3909433994352003334}
   soundSlider: {fileID: 3909433995030073057}
+  gameVolumeParameter: gameAudioVolume
+  gameAudioMixer: {fileID: 24100000, guid: 59125a38e0f5090459fbce39a78e2649, type: 2}
 --- !u!1 &3909433995009014846
 GameObject:
   m_ObjectHideFlags: 0
@@ -5109,6 +5111,7 @@ GameObject:
   - component: {fileID: 3909433995283815785}
   - component: {fileID: 3909433995283815787}
   - component: {fileID: 3909433995283815786}
+  - component: {fileID: 5427891086291860520}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -5254,6 +5257,19 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &5427891086291860520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3909433995283815784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7305ea415ed7c7346b6b2acd32b74e3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMaterial: {fileID: 0}
 --- !u!1 &3909433995355805648
 GameObject:
   m_ObjectHideFlags: 0
@@ -5707,6 +5723,7 @@ MonoBehaviour:
   optionsMenu: {fileID: 3909433994935924139}
   completeMenu: {fileID: 3909433994333802175}
   isPaused: {fileID: 11400000, guid: 40ae6872e940bb94894a50a49570fc89, type: 2}
+  levelComplete: 0
 --- !u!1 &3909433995461489473
 GameObject:
   m_ObjectHideFlags: 0
