@@ -54,9 +54,9 @@ Material:
     - _FaceDilate: 0
     - _FaceUVSpeedX: 0
     - _FaceUVSpeedY: 0
-    - _GlowInner: 0.025777156
+    - _GlowInner: 0.15912785
     - _GlowOffset: 0
-    - _GlowOuter: 0.5825589
+    - _GlowOuter: 0.015198718
     - _GlowPower: 1
     - _GradientScale: 10
     - _LightAngle: 2.59

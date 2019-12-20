@@ -4,16 +4,24 @@ using UnityEngine;
 
 public class Jukebox : MonoBehaviour
 {
+    public static Jukebox instance;
+
     public AudioClip[] audioClips;
 
     private AudioSource source = null;
 
     private void Awake() {
-        if(TryGetComponent<AudioSource>(out AudioSource src)){
-            source = src;
+
+        if(instance == null){
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        } else {
+            Destroy(this.gameObject);
         }
 
-        DontDestroyOnLoad(this.gameObject);
+        if(TryGetComponent<AudioSource>(out AudioSource src)){
+            source = src;
+        }        
     }
 
     private void Update() {
