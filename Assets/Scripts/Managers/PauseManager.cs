@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class PauseManager : MonoBehaviour
 {
@@ -12,10 +13,15 @@ public class PauseManager : MonoBehaviour
 
     [Header("Variables")]
     public SOBool isPaused = null;
+    public AudioMixer gameAudioMixer = null;
+    public float lowPassFreqMin = 400f;
+    public float lowPassFreqMax = 5000f;
 
     public bool levelComplete = false;
 
     private void Start() {
+        gameAudioMixer.SetFloat("lowPassValue", lowPassFreqMax);
+
         if(isPaused.value)
             isPaused.value = false;    
     }
@@ -33,6 +39,7 @@ public class PauseManager : MonoBehaviour
     }
 
     public void Pause(){
+        gameAudioMixer.SetFloat("lowPassValue", lowPassFreqMin);
         isPaused.value = true;
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
@@ -46,6 +53,7 @@ public class PauseManager : MonoBehaviour
         if(levelComplete)
             levelComplete = !levelComplete;
 
+        gameAudioMixer.SetFloat("lowPassValue", lowPassFreqMax);
         isPaused.value = false;
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
@@ -72,6 +80,7 @@ public class PauseManager : MonoBehaviour
     }
 
     public void LevelComplete(){
+        gameAudioMixer.SetFloat("lowPassValue", lowPassFreqMin);
         levelComplete = true;
         isPaused.value = true;
         Time.timeScale = 0f;
@@ -81,7 +90,7 @@ public class PauseManager : MonoBehaviour
     }
 
     public void ReturnToMenu(){
-
+        gameAudioMixer.SetFloat("lowPassValue", lowPassFreqMax);
         if(levelComplete)
             levelComplete = !levelComplete;
 
@@ -91,7 +100,6 @@ public class PauseManager : MonoBehaviour
     }
 
     public void Quit(){
-
         if(levelComplete)
             levelComplete = !levelComplete;
 

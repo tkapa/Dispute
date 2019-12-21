@@ -11,11 +11,14 @@ public class Weapon : MonoBehaviour
     public int ammoCount = 0;
     public float damage = 50f;
     public float effectiveDistance = 100f;
+
     public float fireRate = 0.2f;
+    private float fireRateCounter = 0;
 
     [Space]
     public LayerMask mask;   
     public ParticleSystem muzzleFlash = null;
+    public AmmoCounter counter = null;
 
     public bool infiniteAmmo = false;
     private bool isFiring = false;
@@ -23,16 +26,41 @@ public class Weapon : MonoBehaviour
     private void Start() {
         ammoCount = maxAmmo;
         cam = Camera.main;
+        counter.UpdateText(ammoCount);
+    }
+
+    private void Update() {
+        if(fireRateCounter > 0){
+            fireRateCounter -= Time.deltaTime;
+        } else if(isFiring && ammoCount > 0){
+            Fire();
+        }
+    }
+
+    void Fire(){
+        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        if(Physics.Raycast(ray, out hit, effectiveDistance, mask)){
+            var selection = hit.transform;
+            selection.GetComponent<EnemyHealth>().TakeDamage(damage);
+        }
+
+        fireRateCounter = fireRate;
+        muzzleFlash.Play();
+        //TODO: Make a firing animation
+
+        if(!infiniteAmmo){
+            ammoCount--;
+            counter.UpdateText(ammoCount);
+        }   
     }
 
     public void BeginFiring(){
         isFiring = true;
-        StartCoroutine(Fire());
     }
 
     public void StopFiring(){
         isFiring = false;
-        StopCoroutine(Fire());
 
         if(ammoCount == 0){
             Reload();
@@ -42,27 +70,6 @@ public class Weapon : MonoBehaviour
     public void Reload(){
         //TODO: Play Reload animation
         ammoCount = maxAmmo;
-        Debug.Log("Ammo count reset");
-    }
-
-    IEnumerator Fire(){
-        while(isFiring && ammoCount > 0){
-            Debug.Log("Bang");
-
-            //TODO: Play Firing Animation and Juice here Reloading
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            if(Physics.Raycast(ray, out hit, effectiveDistance, mask)){
-                var selection = hit.transform;
-                selection.GetComponent<EnemyHealth>().TakeDamage(damage);
-            }
-
-            muzzleFlash.Play();
-            
-            if(!infiniteAmmo)
-                ammoCount--;
-
-            yield return new WaitForSeconds(fireRate);
-        }
+        counter.UpdateText(ammoCount);
     }
 }

@@ -20,7 +20,7 @@ public class AudioReactor : MonoBehaviour
 
     void OnSpectrum (float[] spectrum)
 	{
-        textMaterial.SetFloat("_GlowInner", spectrum[2]*10);
-        textMaterial.SetFloat(ShaderUtilities.ID_GlowOuter, spectrum[5]*10);
+        textMaterial.SetFloat("_GlowInner", spectrum[2]*8);
+        textMaterial.SetFloat(ShaderUtilities.ID_GlowOuter, spectrum[5]*8);
 	}
 }

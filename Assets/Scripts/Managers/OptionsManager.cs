@@ -27,7 +27,7 @@ public class OptionsManager : MonoBehaviour
         sensitivitySlider.value = sensitivity.value;
         fovSlider.value = fov.value;
 
-        gameAudioMixer.SetFloat("gameAudioVolume", -80 + sound.value);
+        gameAudioMixer.SetFloat("gameAudioVolume", -70 + (70*(sound.value/100)));
         soundSlider.value = sound.value;
     }
 
@@ -46,6 +46,6 @@ public class OptionsManager : MonoBehaviour
 
     public void ChangeSound(float newSound){
         sound.value = newSound;
-        gameAudioMixer.SetFloat("gameAudioVolume", -80 + sound.value);
+        gameAudioMixer.SetFloat("gameAudioVolume", -70 + (70*(sound.value/100)));
     }
 }
