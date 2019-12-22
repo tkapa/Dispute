@@ -14,11 +14,14 @@ public class Weapon : MonoBehaviour
 
     public float fireRate = 0.2f;
     private float fireRateCounter = 0;
+    public float reloadTime = 0.4f;
+    private float reloadTimer = 0;
 
     [Space]
     public LayerMask mask;   
     public ParticleSystem muzzleFlash = null;
     public AmmoCounter counter = null;
+    public Animator animator = null;
 
     public bool infiniteAmmo = false;
     private bool isFiring = false;
@@ -30,8 +33,9 @@ public class Weapon : MonoBehaviour
     }
 
     private void Update() {
-        if(fireRateCounter > 0){
+        if(fireRateCounter > 0 || reloadTimer > 0){
             fireRateCounter -= Time.deltaTime;
+            reloadTimer -= Time.deltaTime;
         } else if(isFiring && ammoCount > 0){
             Fire();
         }
@@ -47,8 +51,7 @@ public class Weapon : MonoBehaviour
 
         fireRateCounter = fireRate;
         muzzleFlash.Play();
-        //TODO: Make a firing animation
-
+        animator.Play("Firing");
         if(!infiniteAmmo){
             ammoCount--;
             counter.UpdateText(ammoCount);
@@ -69,6 +72,8 @@ public class Weapon : MonoBehaviour
 
     public void Reload(){
         //TODO: Play Reload animation
+        animator.Play("Reload");
+        reloadTimer = reloadTime;
         ammoCount = maxAmmo;
         counter.UpdateText(ammoCount);
     }

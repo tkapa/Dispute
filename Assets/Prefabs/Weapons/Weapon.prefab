@@ -5092,6 +5092,7 @@ GameObject:
   - component: {fileID: 7171411195800057515}
   - component: {fileID: 7171411195800057512}
   - component: {fileID: 7171411195800057513}
+  - component: {fileID: 6145248889683240764}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Untagged
@@ -5191,12 +5192,33 @@ MonoBehaviour:
   damage: 50
   effectiveDistance: 100
   fireRate: 0.2
+  reloadTime: 0.5
   mask:
     serializedVersion: 2
     m_Bits: 1024
   muzzleFlash: {fileID: 4773308116735342180}
   counter: {fileID: 4905000958918180675}
+  animator: {fileID: 6145248889683240764}
   infiniteAmmo: 0
+--- !u!95 &6145248889683240764
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7171411195800057519}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f2f4e92d0af911d4cb0daefa7385d23c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7171411197136136698
 GameObject:
   m_ObjectHideFlags: 0
