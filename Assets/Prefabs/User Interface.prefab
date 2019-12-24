@@ -5732,6 +5732,9 @@ MonoBehaviour:
   optionsMenu: {fileID: 3909433994935924139}
   completeMenu: {fileID: 3909433994333802175}
   isPaused: {fileID: 11400000, guid: 40ae6872e940bb94894a50a49570fc89, type: 2}
+  gameAudioMixer: {fileID: 0}
+  lowPassFreqMin: 400
+  lowPassFreqMax: 5000
   levelComplete: 0
 --- !u!114 &863993283036088602
 MonoBehaviour:
