@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerSprint : MonoBehaviour
 {
@@ -11,7 +10,7 @@ public class PlayerSprint : MonoBehaviour
     public float sprintCooldownTime = 3.0f;
     private float sprintCooldownTimer = 0.0f;
 
-    public Slider sprintSlider = null;
+    public ValueBar sprintSlider = null;
 
     bool canSprint = true;
 
@@ -30,6 +29,13 @@ public class PlayerSprint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(sprintCooldownTimer > 0){
+            sprintCooldownTimer -= Time.deltaTime;
+        }else {
+            canSprint = true;
+            sprintTimer = sprintTime;
+        } 
+
         if(Input.GetKeyDown(KeyCode.LeftShift)){
             movement.isSprinting = !movement.isSprinting;
         }
