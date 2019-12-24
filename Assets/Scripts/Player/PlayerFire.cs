@@ -5,19 +5,20 @@ using UnityEngine;
 public class PlayerFire : MonoBehaviour
 {   
     public Weapon weapon = null;
+    public SOBool isPaused = null;
 
     private void Update() {
-        if(Input.GetMouseButtonDown(0)){
+        if(Input.GetMouseButtonDown(0) && !isPaused.value){
             if(weapon != null){
                 weapon.BeginFiring();
             }
-        } else if(Input.GetMouseButtonUp(0)){
+        } else if(Input.GetMouseButtonUp(0) && !isPaused.value){
             if(weapon != null){
                 weapon.StopFiring();
             }
         }
 
-        if(Input.GetKeyDown(KeyCode.R)){
+        if(Input.GetKeyDown(KeyCode.R) && !isPaused.value){
             weapon.Reload();
         }
     }

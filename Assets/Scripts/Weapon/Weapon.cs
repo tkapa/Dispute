@@ -22,6 +22,8 @@ public class Weapon : MonoBehaviour
     public ParticleSystem muzzleFlash = null;
     public AmmoCounter counter = null;
     public Animator animator = null;
+    public AudioSource audio = null;
+    public ScreenShake screenShake = null;
 
     public bool infiniteAmmo = false;
     private bool isFiring = false;
@@ -51,7 +53,10 @@ public class Weapon : MonoBehaviour
 
         fireRateCounter = fireRate;
         muzzleFlash.Play();
+        audio.Play();
         animator.Play("Firing");
+
+        StartCoroutine(screenShake.Shake(0.1f, 0.05f));
         if(!infiniteAmmo){
             ammoCount--;
             counter.UpdateText(ammoCount);
@@ -71,7 +76,6 @@ public class Weapon : MonoBehaviour
     }
 
     public void Reload(){
-        //TODO: Play Reload animation
         animator.Play("Reload");
         reloadTimer = reloadTime;
         ammoCount = maxAmmo;
