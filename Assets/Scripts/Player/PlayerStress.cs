@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerStress : MonoBehaviour
 {
-    public float stress = 0.0f;
+    public SOFloat stress = null;
     public float maximumStress = 100f;
 
     public ValueBar stressBar = null;
@@ -16,12 +16,12 @@ public class PlayerStress : MonoBehaviour
     }
 
     public void StressIncrease(float value){
-        stress += value;
+        stress.value += value;
         SetStressValues();
     }
 
     void SetStressValues(){
-        stressBar.SetValue(stress/maximumStress);
+        stressBar.SetValue(stress.value/maximumStress);
         //TODO: Increase the sound of the dispute in the background && increase stress when the player isnt playing
     }
 }
