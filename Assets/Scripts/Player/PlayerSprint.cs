@@ -5,12 +5,12 @@ using UnityEngine;
 public class PlayerSprint : MonoBehaviour
 {
     public float sprintTime = 6.0f;
-    public float sprintTimer = 0.0f;
+    private float sprintTimer = 0.0f;
 
     public float sprintCooldownTime = 3.0f;
-    public float sprintCooldownTimer = 0.0f;
 
     public ValueBar sprintSlider = null;
+    public Camera playerCamera = null;
 
     bool canSprint = true;
 
@@ -32,6 +32,12 @@ public class PlayerSprint : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.LeftShift) && canSprint){
             movement.isSprinting = !movement.isSprinting;
+
+            if(movement.isSprinting){
+                StartCoroutine(FOVChange(10));
+            } else {
+                StartCoroutine(FOVChange(-10));
+            }
         }
 
         if(movement.isSprinting && sprintTimer > 0){
@@ -40,6 +46,7 @@ public class PlayerSprint : MonoBehaviour
         } else if(sprintTimer <= 0 && canSprint){
             movement.isSprinting = false;
             canSprint = false;
+            StartCoroutine(FOVChange(-10));
             StartCoroutine(SprintCooldown(sprintCooldownTime));
         } else if(!movement.isSprinting && sprintTimer < sprintTime && canSprint){
             sprintTimer += Time.deltaTime;
@@ -58,5 +65,14 @@ public class PlayerSprint : MonoBehaviour
         canSprint = true;
         sprintTimer = sprintTime;
         sprintSlider.SetValue(sprintTimer/sprintTime);
+    }
+
+    IEnumerator FOVChange(float increment){
+        float newValue = playerCamera.fieldOfView + increment;
+
+        while(playerCamera.fieldOfView != newValue){
+            playerCamera.fieldOfView += 0.5f;
+            yield return null;
+        }
     }
 }

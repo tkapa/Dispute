@@ -1264,42 +1264,6 @@ Transform:
   m_Father: {fileID: 1149269258}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2118417826 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1041788270172047643, guid: dda40596ba4e2534084a845017d7d0f8,
-    type: 3}
-  m_PrefabInstance: {fileID: 1041788269562339015}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2118417827
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2118417826}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a657011d9987797468e53d60586f7561, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprintTime: 6
-  sprintCooldownTime: 3
-  sprintSlider: {fileID: 409281195}
---- !u!114 &2118417829
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2118417826}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be0b834754482e349bb8dd0bc45f3e56, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stress: 0
-  maximumStress: 100
-  stressBar: {fileID: 1291516094}
 --- !u!1001 &1041788269562339015
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1367,6 +1331,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2118417827, guid: dda40596ba4e2534084a845017d7d0f8, type: 3}
+      propertyPath: sprintSlider
+      value: 
+      objectReference: {fileID: 409281195}
+    - target: {fileID: 2118417829, guid: dda40596ba4e2534084a845017d7d0f8, type: 3}
+      propertyPath: stressBar
+      value: 
+      objectReference: {fileID: 1291516094}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dda40596ba4e2534084a845017d7d0f8, type: 3}
 --- !u!1001 &7714907374670000605
