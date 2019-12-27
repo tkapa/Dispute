@@ -425,6 +425,7 @@ MonoBehaviour:
   stress: {fileID: 11400000, guid: d0331e67af5b8e443a2de93d64d6df24, type: 2}
   maximumStress: 100
   stressBar: {fileID: 0}
+  gameMixer: {fileID: 24100000, guid: 59125a38e0f5090459fbce39a78e2649, type: 2}
 --- !u!1 &1361501037801863182
 GameObject:
   m_ObjectHideFlags: 0

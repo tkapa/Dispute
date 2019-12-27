@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class PlayerStress : MonoBehaviour
 {
@@ -8,11 +9,16 @@ public class PlayerStress : MonoBehaviour
     public float maximumStress = 100f;
 
     public ValueBar stressBar = null;
+    public AudioMixer gameMixer = null;
 
     // Start is called before the first frame update
     void Start()
     {
         SetStressValues();
+    }
+
+    private void Update() {
+        StressIncrease(Time.deltaTime*0.5f);
     }
 
     public void StressIncrease(float value){
@@ -21,7 +27,10 @@ public class PlayerStress : MonoBehaviour
     }
 
     void SetStressValues(){
-        stressBar.SetValue(stress.value/maximumStress);
-        //TODO: Increase the sound of the dispute in the background && increase stress when the player isnt playing
+        float percent = stress.value/maximumStress;
+        stressBar.SetValue(percent);
+
+        gameMixer.SetFloat("disputeVolume", (90*percent)+-70);
+        //gameMixer.SetFloat("gameAudioVolume", 20 - (90*percent));
     }
 }
