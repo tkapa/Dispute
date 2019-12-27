@@ -395,6 +395,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseManager: {fileID: 1354702914}
   weapon: {fileID: 268151788}
+  stress: {fileID: 11400000, guid: d0331e67af5b8e443a2de93d64d6df24, type: 2}
 --- !u!4 &306961403
 Transform:
   m_ObjectHideFlags: 0
