@@ -11,6 +11,8 @@ public class PlayerSprint : MonoBehaviour
 
     public ValueBar sprintSlider = null;
     public Camera playerCamera = null;
+    public SOBool isPaused = null;
+
 
     bool canSprint = true;
 
@@ -30,7 +32,7 @@ public class PlayerSprint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.LeftShift) && canSprint){
+        if(Input.GetKeyDown(KeyCode.LeftShift) && canSprint && !isPaused.value){
             movement.isSprinting = !movement.isSprinting;
 
             if(movement.isSprinting){
@@ -71,7 +73,11 @@ public class PlayerSprint : MonoBehaviour
         float newValue = playerCamera.fieldOfView + increment;
 
         while(playerCamera.fieldOfView != newValue){
-            playerCamera.fieldOfView += 0.5f;
+            if(playerCamera.fieldOfView < newValue){
+                playerCamera.fieldOfView += 0.5f;
+            } else {
+                playerCamera.fieldOfView -= 0.5f;
+            }
             yield return null;
         }
     }

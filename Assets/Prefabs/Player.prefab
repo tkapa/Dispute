@@ -410,6 +410,7 @@ MonoBehaviour:
   sprintCooldownTime: 3
   sprintSlider: {fileID: 0}
   playerCamera: {fileID: 1041788269728120221}
+  isPaused: {fileID: 11400000, guid: 40ae6872e940bb94894a50a49570fc89, type: 2}
 --- !u!114 &2118417829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -534,6 +535,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Weapon
       objectReference: {fileID: 0}
+    - target: {fileID: 7171411195800057513, guid: 60cad6eb9155e9547bb1c8165632dc7d,
+        type: 3}
+      propertyPath: screenShake
+      value: 
+      objectReference: {fileID: 111061353}
     - target: {fileID: 7171411195800057518, guid: 60cad6eb9155e9547bb1c8165632dc7d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -589,11 +595,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7171411195800057513, guid: 60cad6eb9155e9547bb1c8165632dc7d,
-        type: 3}
-      propertyPath: screenShake
-      value: 
-      objectReference: {fileID: 111061353}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60cad6eb9155e9547bb1c8165632dc7d, type: 3}
 --- !u!4 &7922065485038615785 stripped
