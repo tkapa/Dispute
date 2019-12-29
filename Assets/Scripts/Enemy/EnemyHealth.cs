@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     public float maximumHealth = 100f;
+    public float stressDecrease = -2f;
+
     private float currentHealth;
 
     private void Start() {
@@ -20,7 +22,7 @@ public class EnemyHealth : MonoBehaviour
     }
 
     void Death(){
-        Debug.Log("Poof");
+        FindObjectOfType<PlayerStress>().StressIncrease(stressDecrease);
         Destroy(this.gameObject);
     }
 }
