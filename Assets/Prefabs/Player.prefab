@@ -428,6 +428,7 @@ MonoBehaviour:
   stressBar: {fileID: 0}
   gameMixer: {fileID: 24100000, guid: 59125a38e0f5090459fbce39a78e2649, type: 2}
   gameSound: {fileID: 11400000, guid: 0ac1f9ca873f94343b3995c6cc825f03, type: 2}
+  increaseStress: {fileID: 11400000, guid: d956fa6ab5a2a334eba8418413042738, type: 2}
 --- !u!1 &1361501037801863182
 GameObject:
   m_ObjectHideFlags: 0
@@ -535,11 +536,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Weapon
       objectReference: {fileID: 0}
-    - target: {fileID: 7171411195800057513, guid: 60cad6eb9155e9547bb1c8165632dc7d,
-        type: 3}
-      propertyPath: screenShake
-      value: 
-      objectReference: {fileID: 111061353}
     - target: {fileID: 7171411195800057518, guid: 60cad6eb9155e9547bb1c8165632dc7d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -595,6 +591,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7171411195800057513, guid: 60cad6eb9155e9547bb1c8165632dc7d,
+        type: 3}
+      propertyPath: screenShake
+      value: 
+      objectReference: {fileID: 111061353}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60cad6eb9155e9547bb1c8165632dc7d, type: 3}
 --- !u!4 &7922065485038615785 stripped

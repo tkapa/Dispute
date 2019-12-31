@@ -12,6 +12,8 @@ public class PlayerStress : MonoBehaviour
     public AudioMixer gameMixer = null;
     public SOFloat gameSound = null;
 
+    public SOBool increaseStress = null;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,8 +25,11 @@ public class PlayerStress : MonoBehaviour
     }
 
     public void StressIncrease(float value){
-        stress.value += value;
-        SetStressValues();
+        
+        if(increaseStress.value){
+            stress.value += value;
+            SetStressValues();
+        }
 
         if(stress.value >= maximumStress){
             Cursor.lockState = CursorLockMode.None;

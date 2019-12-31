@@ -22,7 +22,7 @@ public class Weapon : MonoBehaviour
     public ParticleSystem muzzleFlash = null;
     public AmmoCounter counter = null;
     public Animator animator = null;
-    public AudioSource audio = null;
+    public AudioSource audioSource = null;
     public ScreenShake screenShake = null;
 
     public bool infiniteAmmo = false;
@@ -53,7 +53,7 @@ public class Weapon : MonoBehaviour
 
         fireRateCounter = fireRate;
         muzzleFlash.Play();
-        audio.Play();
+        audioSource.Play();
         animator.Play("Firing");
 
         StartCoroutine(screenShake.Shake(0.1f, 0.05f));

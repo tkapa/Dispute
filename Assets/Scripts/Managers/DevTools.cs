@@ -10,6 +10,8 @@ public class DevTools : MonoBehaviour
 
     public SOFloat stress = null;
 
+    public SOBool increaseStress = null;
+
     // Update is called once per frame
     void Update()
     {
@@ -27,6 +29,10 @@ public class DevTools : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.K)){
             stress.value = 50.0f;
+        }
+
+        if(Input.GetKeyDown(KeyCode.L)){
+            increaseStress.value = !increaseStress.value;
         }
     }
 }

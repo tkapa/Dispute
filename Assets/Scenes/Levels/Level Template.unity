@@ -602,6 +602,31 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8057553639784426488, guid: c8d0163449d1bae40b569ed4c719887f,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8057553639784426488, guid: c8d0163449d1bae40b569ed4c719887f,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8057553639784426488, guid: c8d0163449d1bae40b569ed4c719887f,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8057553639784426488, guid: c8d0163449d1bae40b569ed4c719887f,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8057553639784426488, guid: c8d0163449d1bae40b569ed4c719887f,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8d0163449d1bae40b569ed4c719887f, type: 3}
 --- !u!114 &747849949 stripped
@@ -1094,6 +1119,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1874158682}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1953900389 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3253427519978696589, guid: c8d0163449d1bae40b569ed4c719887f,
+    type: 3}
+  m_PrefabInstance: {fileID: 636599625}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1953900393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953900389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8acc252524dc7464f91dcaf9a45f2f8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beatCount: 10
 --- !u!114 &2133880649 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7922065485038615790, guid: dda40596ba4e2534084a845017d7d0f8,

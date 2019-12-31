@@ -36,9 +36,9 @@ public class PlayerSprint : MonoBehaviour
             movement.isSprinting = !movement.isSprinting;
 
             if(movement.isSprinting){
-                StartCoroutine(FOVChange(10));
+                FOVChange(10);
             } else {
-                StartCoroutine(FOVChange(-10));
+                FOVChange(-10);
             }
         }
 
@@ -48,7 +48,7 @@ public class PlayerSprint : MonoBehaviour
         } else if(sprintTimer <= 0 && canSprint){
             movement.isSprinting = false;
             canSprint = false;
-            StartCoroutine(FOVChange(-10));
+            FOVChange(-10);
             StartCoroutine(SprintCooldown(sprintCooldownTime));
         } else if(!movement.isSprinting && sprintTimer < sprintTime && canSprint){
             sprintTimer += Time.deltaTime;
@@ -69,16 +69,9 @@ public class PlayerSprint : MonoBehaviour
         sprintSlider.SetValue(sprintTimer/sprintTime);
     }
 
-    IEnumerator FOVChange(float increment){
+    void FOVChange(float increment){
         float newValue = playerCamera.fieldOfView + increment;
 
-        while(playerCamera.fieldOfView != newValue){
-            if(playerCamera.fieldOfView < newValue){
-                playerCamera.fieldOfView += 0.5f;
-            } else {
-                playerCamera.fieldOfView -= 0.5f;
-            }
-            yield return null;
-        }
+        Mathf.Lerp(playerCamera.fieldOfView, newValue, 2f);
     }
 }
