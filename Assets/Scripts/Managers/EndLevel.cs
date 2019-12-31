@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EndLevel : MonoBehaviour
-{
-    public enum CompletionConditions{
+public enum CompletionConditions{
         ecc_None,
         ecc_AllEnemies,
     }
 
+public class EndLevel : MonoBehaviour
+{
     public CompletionConditions conditions;
 
     private void OnTriggerEnter(Collider other) {

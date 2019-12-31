@@ -396,6 +396,7 @@ MonoBehaviour:
   pauseManager: {fileID: 1354702914}
   weapon: {fileID: 268151788}
   stress: {fileID: 11400000, guid: d0331e67af5b8e443a2de93d64d6df24, type: 2}
+  increaseStress: {fileID: 0}
 --- !u!4 &306961403
 Transform:
   m_ObjectHideFlags: 0
@@ -1020,6 +1021,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8057553639784426488, guid: c8d0163449d1bae40b569ed4c719887f,
+        type: 3}
+      propertyPath: m_text
+      value: Bottom text
+      objectReference: {fileID: 0}
+    - target: {fileID: 8057553639784426488, guid: c8d0163449d1bae40b569ed4c719887f,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8057553639784426488, guid: c8d0163449d1bae40b569ed4c719887f,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8057553639784426488, guid: c8d0163449d1bae40b569ed4c719887f,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8d0163449d1bae40b569ed4c719887f, type: 3}

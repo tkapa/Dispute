@@ -593,6 +593,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7171411195800057513, guid: 60cad6eb9155e9547bb1c8165632dc7d,
         type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 7305379050146501368}
+    - target: {fileID: 7171411195800057513, guid: 60cad6eb9155e9547bb1c8165632dc7d,
+        type: 3}
       propertyPath: screenShake
       value: 
       objectReference: {fileID: 111061353}
@@ -616,3 +621,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aadbba8d9b6a37745865dc2ad9ba6000, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &7305379050146501368 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7716011289832593599, guid: 60cad6eb9155e9547bb1c8165632dc7d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1041788269872810567}
+  m_PrefabAsset: {fileID: 0}
