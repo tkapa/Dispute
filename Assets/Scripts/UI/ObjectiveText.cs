@@ -16,14 +16,15 @@ public class ObjectiveText : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        beatCounter = 0;
+
         if(TryGetComponent<TextMeshProUGUI>(out TextMeshProUGUI text)){
             objectiveText = text;
         }
 
-        SetText();
+        AudioProcessor.instance.onBeat.AddListener(OnBeat);
 
-        AudioProcessor processor = FindObjectOfType<AudioProcessor> ();
-		processor.onBeat.AddListener(OnBeat);
+        SetText();
     }
 
     void SetText(){
@@ -39,9 +40,11 @@ public class ObjectiveText : MonoBehaviour
     }
 
     void OnBeat(){
+        Debug.Log("Beat");
         if(beatCounter >= beatCount){
             gameObject.SetActive(false);
         }
+
         beatCounter++;
     }
 }

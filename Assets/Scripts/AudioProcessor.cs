@@ -21,6 +21,7 @@ using System.Collections.Generic;
 [RequireComponent (typeof(AudioSource))]
 public class AudioProcessor : MonoBehaviour
 {
+	public static AudioProcessor instance;
 	public AudioSource audioSource;
 
 	private long lastT, nowT, diff, entries, sum;
@@ -91,6 +92,16 @@ public class AudioProcessor : MonoBehaviour
 		acVals = new float[maxlag];
 		alph = 100 * gThresh;
 	}
+
+	private void Awake() {
+
+      if(instance == null){
+        instance = this;
+        DontDestroyOnLoad(this);
+      } else {
+          Destroy(this);
+      }      
+    }
 
 	// Use this for initialization
 	void Start ()

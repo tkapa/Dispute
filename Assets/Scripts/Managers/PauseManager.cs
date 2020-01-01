@@ -74,7 +74,6 @@ public class PauseManager : MonoBehaviour
     }
 
     public void NextLevel(){
-        //TODO: Ability to cross from one level to the next
         Resume();
         SceneManager.LoadScene("HDTestingScene");
     }

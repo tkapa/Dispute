@@ -784,9 +784,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Kill  them all
-
-'
+  m_text: Bottom text
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 889396bc6b59e9948bc9b0a1fd1cf129, type: 2}
   m_sharedMaterial: {fileID: 1284566855874904543, guid: 889396bc6b59e9948bc9b0a1fd1cf129,
@@ -856,10 +854,10 @@ MonoBehaviour:
   m_margin: {x: -0.54662365, y: 0.0061287414, z: 0.2666425, w: 0}
   m_textInfo:
     textComponent: {fileID: 8057553639784426488}
-    characterCount: 15
+    characterCount: 11
     spriteCount: 0
-    spaceCount: 4
-    wordCount: 3
+    spaceCount: 1
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -891,6 +889,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8acc252524dc7464f91dcaf9a45f2f8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  killEnemiesText: Kill them all
+  reachGoalText: Reach the goal
   beatCount: 10
 --- !u!1 &3909433993410866766
 GameObject:

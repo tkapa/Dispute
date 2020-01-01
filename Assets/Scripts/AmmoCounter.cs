@@ -14,6 +14,12 @@ public class AmmoCounter : MonoBehaviour
     }
 
     public void UpdateText(int ammoCount){
+      if(text == null){
+        if(TryGetComponent<TextMeshProUGUI>(out TextMeshProUGUI t)){
+          text = t;
+        }
+      }
+
       text.text = ammoCount.ToString();
     }
 }

@@ -13,6 +13,7 @@ public class PlayerSprint : MonoBehaviour
     public Camera playerCamera = null;
     public SOBool isPaused = null;
 
+    private float newFOV = 0.0f;
 
     bool canSprint = true;
 
@@ -21,6 +22,7 @@ public class PlayerSprint : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        newFOV = playerCamera.fieldOfView;
         sprintTimer = sprintTime;
         sprintSlider.SetValue(sprintTimer/sprintTime);
 
@@ -40,6 +42,10 @@ public class PlayerSprint : MonoBehaviour
             } else {
                 FOVChange(-10);
             }
+        }
+
+        if(playerCamera.fieldOfView != newFOV){
+            playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, newFOV, Time.deltaTime * 5);
         }
 
         if(movement.isSprinting && sprintTimer > 0){
@@ -70,8 +76,6 @@ public class PlayerSprint : MonoBehaviour
     }
 
     void FOVChange(float increment){
-        float newValue = playerCamera.fieldOfView + increment;
-
-        Mathf.Lerp(playerCamera.fieldOfView, newValue, 2f);
+        newFOV = playerCamera.fieldOfView + increment;        
     }
 }
