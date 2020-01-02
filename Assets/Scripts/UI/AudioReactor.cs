@@ -13,9 +13,7 @@ public class AudioReactor : MonoBehaviour
         if(TryGetComponent<Renderer>(out Renderer renderer)){
             textMaterial = renderer.material;
         }
-
-        AudioProcessor processor = FindObjectOfType<AudioProcessor> ();
-		processor.onSpectrum.AddListener (OnSpectrum);
+		AudioProcessor.instance.onSpectrum.AddListener (OnSpectrum);
     }
 
     void OnSpectrum (float[] spectrum)

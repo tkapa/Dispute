@@ -75,7 +75,7 @@ public class PauseManager : MonoBehaviour
 
     public void NextLevel(){
         Resume();
-        SceneManager.LoadScene("HDTestingScene");
+        LevelLoader.instance.LoadNewLevel();
     }
 
     public void LevelComplete(){

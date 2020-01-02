@@ -101,7 +101,7 @@ public class AudioProcessor : MonoBehaviour
       } else {
           Destroy(this);
       }      
-    }
+  }
 
 	// Use this for initialization
 	void Start ()

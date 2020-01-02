@@ -23,9 +23,8 @@ public class MainMenuManager : MonoBehaviour
     }
 
     public void PlayGame(){
-        //TODO: Create First level and put the player into it.
         //DESIREABLE: Make a save feature so that people can save? Play should take 10 mins tops
-        SceneManager.LoadScene("HDTestingScene");
+        SceneManager.LoadScene("Tutorial Level");
     }
 
     public void OpenOptionsMenu(){
